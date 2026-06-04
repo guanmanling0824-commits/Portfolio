@@ -1,0 +1,781 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>管曼玲 | 产品经理 · 个人主页与作品集</title>
+  <meta
+    name="description"
+    content="管曼玲，东南大学城市规划硕士，南京东南大学城市规划设计研究院城市规划师。擅长 G 端 B 端需求调研、产品方案与数据分析，创新空间平台、AI 产业分析 Agent 等项目经验。"
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg-effects" aria-hidden="true">
+    <div class="bg-orb bg-orb--1"></div>
+    <div class="bg-orb bg-orb--2"></div>
+    <div class="bg-orb bg-orb--3"></div>
+    <canvas id="bgCanvas"></canvas>
+    <div class="bg-grid"></div>
+    <div class="bg-scanline"></div>
+  </div>
+
+  <header class="site-header">
+    <nav class="container nav">
+      <a href="#home" class="logo">管曼玲</a>
+      <button class="menu-toggle" id="menuToggle" type="button" aria-label="切换导航菜单" aria-expanded="false" aria-controls="navLinks">☰</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">关于我</a></li>
+        <li><a href="#skills">技能</a></li>
+        <li><a href="#portfolio">作品集</a></li>
+        <li><a href="#contact">联系我</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <button class="nav-backdrop" id="navBackdrop" type="button" aria-label="关闭导航菜单" hidden></button>
+
+  <main id="home">
+    <section class="hero container">
+      <div class="hero-text">
+        <p class="tag">作品集 / Portfolio</p>
+        <h1>你好，我是<span>管曼玲</span></h1>
+        <p class="subtitle">
+          3 年 G 端、B 端复杂项目的项目管理与解决方案经验，擅长发掘问题与需求调研分析，具备逻辑建模、方案设计、落地交付与跨部门协同等全流程能力；目标意识与责任心强，工作沉稳细致。
+        </p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#portfolio">查看作品</a>
+          <a class="btn ghost" href="#contact">合作联系</a>
+          <div class="resume-dropdown" id="resumeDropdown">
+            <button
+              type="button"
+              class="btn ghost resume-dropdown__toggle"
+              id="resumeDropdownToggle"
+              aria-haspopup="listbox"
+              aria-expanded="false"
+              aria-controls="resumeDropdownMenu"
+            >
+              下载简历
+              <span class="resume-dropdown__chevron" aria-hidden="true">▾</span>
+            </button>
+            <ul class="resume-dropdown__menu" id="resumeDropdownMenu" role="listbox" hidden>
+              <li role="presentation">
+                <button
+                  type="button"
+                  class="resume-dropdown__option"
+                  role="option"
+                  data-file="管曼玲-产品经理0603.pdf"
+                >
+                  产品经理
+                </button>
+              </li>
+              <li role="presentation">
+                <button
+                  type="button"
+                  class="resume-dropdown__option"
+                  role="option"
+                  data-file="管曼玲-售前解决方案-0603.pdf"
+                >
+                  售前
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="hero-card">
+        <img src="img/profile.png" alt="管曼玲个人照片" />
+        <h2>管曼玲</h2>
+        <p>求职意向：产品经理/售前经理</p>
+        <p class="hero-card-meta">东南大学 · 城市规划硕士（理工科）｜CET-6 537 · CET-4 598</p>
+      </div>
+    </section>
+
+    <section id="about" class="section container">
+      <h2>关于我</h2>
+
+      <div class="about-grid">
+        <div class="about-block about-block--wide">
+          <div class="about-block__head">
+            <span class="about-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </span>
+            <h3>个人亮点</h3>
+          </div>
+          <ul class="about-highlights">
+            <li>
+              <span class="highlight-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+              </span>
+              <div>
+                <strong>需求分析</strong>
+                <p>政策梳理 + 跨部门访谈 + 数据验证，明确需求优先级</p>
+              </div>
+            </li>
+            <li>
+              <span class="highlight-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 3v18h18"/><path d="M7 16l4-6 4 3 5-8"/></svg>
+              </span>
+              <div>
+                <strong>数据驱动</strong>
+                <p>ArcGIS、Excel、SQL、Tableau 可视化；问卷星定量 + 定性分析、用户画像</p>
+              </div>
+            </li>
+            <li>
+              <span class="highlight-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              </span>
+              <div>
+                <strong>跨部门协作</strong>
+                <p>协调政府、技术团队与企业，推动 8 个核心项目按计划通过验收</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="about-block about-block--wide">
+          <div class="about-block__head">
+            <span class="about-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 10v6M2 10l10-6 10 6-10 6z"/><path d="M6 12v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5"/></svg>
+            </span>
+            <h3>教育背景</h3>
+          </div>
+          <div class="edu-grid">
+            <article class="edu-card">
+              <div class="edu-card__badge">硕士</div>
+              <h4>东南大学</h4>
+              <p class="edu-meta">城市规划（理工科）｜2020.09 — 2023.06</p>
+              <ul class="edu-list">
+                <li>校优秀硕士毕业论文</li>
+                <li>核心期刊 2 篇，行业 TOP 会议论文 6 篇</li>
+                <li>2021 江苏省「青绘乡村」设计大赛最具潜力奖</li>
+              </ul>
+            </article>
+            <article class="edu-card">
+              <div class="edu-card__badge">本科</div>
+              <h4>南京工业大学</h4>
+              <p class="edu-meta">城乡规划（理工科）｜2015.09 — 2020.06</p>
+              <ul class="edu-list">
+                <li>专业第一保研至东南大学</li>
+                <li>多次全国设计大赛奖项、校特等奖学金</li>
+                <li>全国大学生绿色校园概念设计大赛一等奖</li>
+                <li>CET-6 537 · CET-4 598</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+
+        <div class="about-block about-block--wide">
+          <div class="about-block__head">
+            <span class="about-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+            </span>
+            <h3>工作经历</h3>
+          </div>
+          <article class="exp-card">
+            <div class="exp-card__top">
+              <div>
+                <h4>南京东南大学城市规划设计研究院有限公司</h4>
+                <p class="exp-role">城市规划师</p>
+              </div>
+              <time class="exp-date" datetime="2023-07/2026-04">2023.07 — 2026.04</time>
+            </div>
+            <p class="exp-desc">
+              主导产业研究、城市更新、智慧城市、智慧园区等产品规划与全生命周期管理，覆盖需求调研、方案设计、跨部门协同、落地验收全流程。
+            </p>
+            <ul class="exp-tags">
+              <li>产业研究</li>
+              <li>城市更新</li>
+              <li>智慧城市</li>
+              <li>智慧园区</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="section container">
+      <h2>技能栈</h2>
+
+      <div class="skills-layout">
+        <div class="skills-icons-row">
+          <div class="skills-icon-item">
+            <span class="about-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5"/><line x1="12" y1="2" x2="12" y2="22"/><line x1="2" y1="8.5" x2="22" y2="15.5"/><line x1="22" y1="8.5" x2="2" y2="15.5"/></svg>
+            </span>
+            <span class="skills-icon-label">能力雷达</span>
+          </div>
+          <div class="skills-icon-item">
+            <span class="about-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 3v18h18"/><path d="M7 16l4-6 4 3 5-8"/></svg>
+            </span>
+            <span class="skills-icon-label">数据分析</span>
+          </div>
+          <div class="skills-icon-item">
+            <span class="about-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+            </span>
+            <span class="skills-icon-label">产品工具</span>
+          </div>
+          <div class="skills-icon-item">
+            <span class="about-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2a4 4 0 0 1 4 4v1h2a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h2V6a4 4 0 0 1 4-4z"/><circle cx="9" cy="13" r="1"/><circle cx="15" cy="13" r="1"/><path d="M9 17h6"/></svg>
+            </span>
+            <span class="skills-icon-label">AI 工具</span>
+          </div>
+        </div>
+
+        <div class="skills-charts-grid">
+          <article class="skill-block skill-block--radar">
+            <div class="skill-block__head">
+              <h3>能力雷达</h3>
+              <p class="skill-block__desc">三类技能综合画像</p>
+            </div>
+            <div class="chart-wrap chart-wrap--radar">
+              <canvas id="skillsRadar" role="img" aria-label="技能能力雷达图：数据分析 80、产品工具 80、AI 工具 75"></canvas>
+            </div>
+          </article>
+
+          <article class="skill-block">
+            <div class="skill-block__head">
+              <h3>数据分析</h3>
+              <p class="skill-block__desc">SQL · Excel · Tableau · GIS · SPSS · MGWR</p>
+            </div>
+            <div class="chart-wrap">
+              <canvas id="chartDataAnalysis" role="img" aria-label="数据分析技能柱状图"></canvas>
+            </div>
+          </article>
+
+          <article class="skill-block">
+            <div class="skill-block__head">
+              <h3>产品工具</h3>
+              <p class="skill-block__desc">Axure · Figma · 墨刀 · Xmind · ProcessOn · PS · Office</p>
+            </div>
+            <div class="chart-wrap">
+              <canvas id="chartProductTools" role="img" aria-label="产品工具技能柱状图"></canvas>
+            </div>
+          </article>
+
+          <article class="skill-block">
+            <div class="skill-block__head">
+              <h3>AI 工具</h3>
+              <p class="skill-block__desc">Dify · Coze · N8N · V0.dev · Cursor</p>
+            </div>
+            <div class="chart-wrap">
+              <canvas id="chartAiTools" role="img" aria-label="AI 工具技能柱状图"></canvas>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="portfolio" class="section container">
+      <h2>作品集</h2>
+      <div class="portfolio-masonry">
+        <article class="project-card">
+          <div class="project-scroll" data-project-scroll data-image-gallery>
+            <div
+              class="project-pages project-pages--full-img"
+              tabindex="0"
+              aria-label="文游界首·运河百景：游戏界面轮播，可横向滑动，自动轮播，点击图片放大"
+            >
+              <figure class="project-page">
+                <button
+                  class="carousel-zoom-btn"
+                  type="button"
+                  data-zoom-src="img/jieshou-1.png"
+                  data-zoom-caption="游戏加载页 — 大运河百景图"
+                  aria-label="放大查看：游戏加载页 — 大运河百景图"
+                >
+                  <img src="img/jieshou-1.png" alt="游戏加载页 — 大运河百景图" loading="lazy" />
+                </button>
+                <figcaption>游戏加载页</figcaption>
+              </figure>
+              <figure class="project-page">
+                <button
+                  class="carousel-zoom-btn"
+                  type="button"
+                  data-zoom-src="img/jieshou-2.png"
+                  data-zoom-caption="大运河百景图 — 沿线城镇地图"
+                  aria-label="放大查看：大运河百景图 — 沿线城镇地图"
+                >
+                  <img src="img/jieshou-2.png" alt="大运河百景图 — 沿线城镇地图" loading="lazy" />
+                </button>
+                <figcaption>沿线城镇地图</figcaption>
+              </figure>
+              <figure class="project-page">
+                <button
+                  class="carousel-zoom-btn"
+                  type="button"
+                  data-zoom-src="img/jieshou-3.png"
+                  data-zoom-caption="界首古镇游戏场景"
+                  aria-label="放大查看：界首古镇游戏场景"
+                >
+                  <img src="img/jieshou-3.png" alt="界首古镇游戏场景" loading="lazy" />
+                </button>
+                <figcaption>界首古镇场景</figcaption>
+              </figure>
+              <figure class="project-page">
+                <button
+                  class="carousel-zoom-btn"
+                  type="button"
+                  data-zoom-src="img/jieshou-7.png"
+                  data-zoom-caption="文游界首·运河百景 — 项目封面"
+                  aria-label="放大查看：文游界首·运河百景项目封面"
+                >
+                  <img src="img/jieshou-7.png" alt="文游界首·运河百景 — 项目封面" loading="lazy" />
+                </button>
+                <figcaption>项目封面</figcaption>
+              </figure>
+              <figure class="project-page">
+                <button
+                  class="carousel-zoom-btn"
+                  type="button"
+                  data-zoom-src="img/jieshou-5.png"
+                  data-zoom-caption="界首古镇综合规划展板"
+                  aria-label="放大查看：界首古镇综合规划展板"
+                >
+                  <img src="img/jieshou-5.png" alt="界首古镇综合规划展板" loading="lazy" />
+                </button>
+                <figcaption>综合规划展板</figcaption>
+              </figure>
+              <figure class="project-page">
+                <button
+                  class="carousel-zoom-btn"
+                  type="button"
+                  data-zoom-src="img/jieshou-4.png"
+                  data-zoom-caption="运河游戏 IP — 游戏介绍与线上线下联动"
+                  aria-label="放大查看：运河游戏 IP 与游戏介绍"
+                >
+                  <img src="img/jieshou-4.png" alt="运河游戏 IP — 游戏介绍与线上线下联动" loading="lazy" />
+                </button>
+                <figcaption>运河游戏 IP</figcaption>
+              </figure>
+              <figure class="project-page">
+                <button
+                  class="carousel-zoom-btn"
+                  type="button"
+                  data-zoom-src="img/jieshou-6.png"
+                  data-zoom-caption="两日游路线与旅游开发模式"
+                  aria-label="放大查看：两日游路线与旅游开发模式"
+                >
+                  <img src="img/jieshou-6.png" alt="两日游路线与旅游开发模式" loading="lazy" />
+                </button>
+                <figcaption>两日游与开发模式</figcaption>
+              </figure>
+            </div>
+            <div class="project-pages-dots" role="tablist" aria-label="文游界首·运河百景轮播切换"></div>
+          </div>
+          <div class="project-content">
+            <h3>文游界首·运河百景</h3>
+            <p>
+              激荡千年的大运河北上齐鲁、南下江淮，沿线运河小镇「因运而生，因运而盛」。方案的创新点在于线上线下联动发展。以游戏为载体，通过「京杭大运河」IP
+              赋能沿线运河小镇，构建线上线下一体化发展的「智慧文旅」新模式，设计游戏「大运河百景图」，助力运河文化传播。深入挖掘界首自身的「生态文化、红色文化、传统文化」，让玩家在游戏中领略浩荡历史，在现实中感悟生生文化。
+            </p>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-scroll" data-project-scroll>
+            <div
+              class="project-pages project-pages--full-img"
+              tabindex="0"
+              aria-label="城市创新空间智慧管理平台：多页预览，可横向滚动，自动轮播"
+            >
+              <figure class="project-page">
+                <img src="img/2.png" alt="城市创新空间智慧管理平台 — 登录页" />
+                <figcaption>登录页</figcaption>
+              </figure>
+              <figure class="project-page">
+                <img src="img/1.png" alt="城市创新空间智慧管理平台 — 新用户注册" />
+                <figcaption>新用户注册</figcaption>
+              </figure>
+              <figure class="project-page">
+                <img src="img/3.png" alt="城市创新空间智慧管理平台 — 界面一" />
+                <figcaption>界面一</figcaption>
+              </figure>
+              <figure class="project-page">
+                <img src="img/4.png" alt="城市创新空间智慧管理平台 — 界面二" />
+                <figcaption>界面二</figcaption>
+              </figure>
+              <figure class="project-page">
+                <img src="img/5.png" alt="城市创新空间智慧管理平台 — 界面三" />
+                <figcaption>界面三</figcaption>
+              </figure>
+            </div>
+            <div class="project-pages-dots" role="tablist" aria-label="城市创新空间智慧管理平台预览页切换"></div>
+          </div>
+          <div class="project-content">
+            <h3>城市创新空间智慧管理平台</h3>
+            <p>
+              产品经理兼项目负责人。问卷与访谈 20 家企业、280 名周边工作与居住人群，梳理运营效率、成本与供需错配等痛点；竞品调研 D9 街区、INNO
+              未来城、同仁 7 号等，沉淀「办公 + 社交 + 商务 + 休闲」配置参考。设计用户端、运营方与管委会端分权限管理，组织运营与真实用户测试并迭代流程。
+            </p>
+            <p>
+              Axure 高保真原型 20+ 页与需求文档交付；成果发表于《城市规划》期刊，于中国城市规划年会宣讲，服务玄武区硅巷改造与招商指引。
+            </p>
+            <div class="project-actions">
+              <a
+                class="btn ghost"
+                href="https://kns.cnki.net/kcms2/article/abstract?v=t_h3i5Pmq2xBXlf5IE5S_AiwYGs5cfb6uqqI9pJy0bTWMA1oyqGRkFjzWVZviTrYA9L_zl9xQ_ZVxvubGyG84OU4vTJrXmXC-kMNbhXCOEmjmtDnfatJYbGnDrWzCAVn6qdOa_5_1iN7_4139Q0H0w2z4wUGo_BzJSXqt-XvKUVCJe5Lh65qCg==&uniplatform=NZKPT&language=CHS"
+                target="_blank"
+                rel="noopener noreferrer"
+              >查看期刊文章</a>
+              <a
+                class="btn primary"
+                href="城市创新空间的集聚特征及影...因素研究——以南京主城为例_管曼玲.pdf"
+                download="城市创新空间的集聚特征及影...因素研究——以南京主城为例_管曼玲.pdf"
+              >下载论文</a>
+            </div>
+          </div>
+        </article>
+        <article class="project-card">
+          <div class="project-scroll" data-project-scroll data-image-gallery>
+            <div
+              class="project-pages project-pages--full-img"
+              tabindex="0"
+              aria-label="校园绿色物流智慧平台：多页预览，可横向滚动，自动轮播，点击图片放大"
+            >
+              <figure class="project-page">
+                <button
+                  class="carousel-zoom-btn"
+                  type="button"
+                  data-zoom-src="img/green-logistics-1.png"
+                  data-zoom-caption="绿邮派首页 — 包裹状态与生态积分"
+                  aria-label="放大查看：绿邮派首页 — 包裹状态与生态积分"
+                >
+                  <img src="img/green-logistics-1.png" alt="绿邮派首页 — 包裹状态与生态积分" loading="lazy" />
+                </button>
+                <figcaption>首页 · 绿邮派</figcaption>
+              </figure>
+              <figure class="project-page">
+                <button
+                  class="carousel-zoom-btn"
+                  type="button"
+                  data-zoom-src="img/green-logistics-3.png"
+                  data-zoom-caption="包裹预约 — 立即预约"
+                  aria-label="放大查看：包裹预约 — 立即预约"
+                >
+                  <img src="img/green-logistics-3.png" alt="包裹预约 — 立即预约" loading="lazy" />
+                </button>
+                <figcaption>立即预约</figcaption>
+              </figure>
+              <figure class="project-page">
+                <button
+                  class="carousel-zoom-btn"
+                  type="button"
+                  data-zoom-src="img/green-logistics-7.png"
+                  data-zoom-caption="预约取货 — 选择取货点与时间"
+                  aria-label="放大查看：预约取货 — 选择取货点与时间"
+                >
+                  <img src="img/green-logistics-7.png" alt="预约取货 — 选择取货点与时间" loading="lazy" />
+                </button>
+                <figcaption>预约取货</figcaption>
+              </figure>
+              <figure class="project-page">
+                <button
+                  class="carousel-zoom-btn"
+                  type="button"
+                  data-zoom-src="img/green-logistics-2.png"
+                  data-zoom-caption="无人车实时配送追踪"
+                  aria-label="放大查看：无人车实时配送追踪"
+                >
+                  <img src="img/green-logistics-2.png" alt="无人车实时配送追踪" loading="lazy" />
+                </button>
+                <figcaption>配送追踪</figcaption>
+              </figure>
+              <figure class="project-page">
+                <button
+                  class="carousel-zoom-btn"
+                  type="button"
+                  data-zoom-src="img/green-logistics-5.png"
+                  data-zoom-caption="机器人到站 — 输入取件码"
+                  aria-label="放大查看：机器人到站 — 输入取件码"
+                >
+                  <img src="img/green-logistics-5.png" alt="机器人到站 — 输入取件码" loading="lazy" />
+                </button>
+                <figcaption>输入取件码</figcaption>
+              </figure>
+              <figure class="project-page">
+                <button
+                  class="carousel-zoom-btn"
+                  type="button"
+                  data-zoom-src="img/green-logistics-6.png"
+                  data-zoom-caption="取件成功 — 碳减排与生态积分"
+                  aria-label="放大查看：取件成功 — 碳减排与生态积分"
+                >
+                  <img src="img/green-logistics-6.png" alt="取件成功 — 碳减排与生态积分" loading="lazy" />
+                </button>
+                <figcaption>取件成功</figcaption>
+              </figure>
+              <figure class="project-page">
+                <button
+                  class="carousel-zoom-btn"
+                  type="button"
+                  data-zoom-src="img/green-logistics-4.png"
+                  data-zoom-caption="已送达 — 前往取件"
+                  aria-label="放大查看：已送达 — 前往取件"
+                >
+                  <img src="img/green-logistics-4.png" alt="已送达 — 前往取件" loading="lazy" />
+                </button>
+                <figcaption>前往取件</figcaption>
+              </figure>
+              <figure class="project-page">
+                <button
+                  class="carousel-zoom-btn"
+                  type="button"
+                  data-zoom-src="img/green-logistics-8.png"
+                  data-zoom-caption="校园无人车调度系统 — 后台管理"
+                  aria-label="放大查看：校园无人车调度系统 — 后台管理"
+                >
+                  <img src="img/green-logistics-8.png" alt="校园无人车调度系统 — 后台管理" loading="lazy" />
+                </button>
+                <figcaption>后台调度系统</figcaption>
+              </figure>
+              <figure class="project-page">
+                <button
+                  class="carousel-zoom-btn"
+                  type="button"
+                  data-zoom-src="img/green-logistics-9.png"
+                  data-zoom-caption="无人车配送与纸箱回收业务流程"
+                  aria-label="放大查看：无人车配送与纸箱回收业务流程"
+                >
+                  <img src="img/green-logistics-9.png" alt="无人车配送与纸箱回收业务流程" loading="lazy" />
+                </button>
+                <figcaption>业务流程图</figcaption>
+              </figure>
+              <figure class="project-page">
+                <button
+                  class="carousel-zoom-btn"
+                  type="button"
+                  data-zoom-src="img/green-logistics-10.png"
+                  data-zoom-caption="IP 形象「小智」— 无人车智能助手"
+                  aria-label="放大查看：IP 形象小智"
+                >
+                  <img src="img/green-logistics-10.png" alt="IP 形象「小智」— 无人车智能助手" loading="lazy" />
+                </button>
+                <figcaption>IP 形象 · 小智</figcaption>
+              </figure>
+            </div>
+            <div class="project-pages-dots" role="tablist" aria-label="校园绿色物流智慧平台预览页切换"></div>
+          </div>
+          <div class="project-content">
+            <h3>校园绿色物流智慧平台</h3>
+            <p>
+              项目负责人。访谈与问卷 126 名师生：约 60% 反馈取件排队超 15 分钟、86% 希望送货上门等痛点；拆解菜鸟、顺丰等用户端，梳理寄取件、预约、下单、支付、配送与回收模块。
+            </p>
+            <p>
+              设计师生端智慧物流系统，含无人车路径查询、微信 / 支付宝 / 校园卡支付、共享快递盒回收与动态提醒等。可行性问卷（N=120）中约 65%
+              师生认为取件时间可节省约 75%；项目获全国大学生绿色校园概念设计大赛一等奖。
+            </p>
+            <div class="project-actions">
+              <a
+                class="btn primary"
+                href="green-campus-proposal.html"
+                target="_blank"
+                rel="noopener noreferrer"
+              >查看竞赛方案</a>
+            </div>
+          </div>
+        </article>
+        <article class="project-card">
+          <div class="project-scroll" data-project-scroll data-image-gallery>
+            <div
+              class="project-pages project-pages--full-img"
+              tabindex="0"
+              aria-label="AI 产业分析 Agent：多页预览，可横向滑动，自动轮播，点击图片放大"
+            >
+              <figure class="project-page">
+                <button
+                  class="carousel-zoom-btn"
+                  type="button"
+                  data-zoom-src="img/ai-industry-agent.png"
+                  data-zoom-caption="AI 产业分析 Agent — 项目封面"
+                  aria-label="放大查看：AI 产业分析 Agent 项目封面"
+                >
+                  <img src="img/ai-industry-agent.png" alt="AI 产业分析 Agent 项目封面" />
+                </button>
+                <figcaption>项目封面</figcaption>
+              </figure>
+              <figure class="project-page">
+                <button
+                  class="carousel-zoom-btn"
+                  type="button"
+                  data-zoom-src="img/ai-industry-2.png"
+                  data-zoom-caption="产业分析大师 — Agent 编排与预览"
+                  aria-label="放大查看：产业分析大师 Agent 编排与预览"
+                >
+                  <img src="img/ai-industry-2.png" alt="产业分析大师 — Agent 编排与预览" loading="lazy" />
+                </button>
+                <figcaption>Agent 编排与预览</figcaption>
+              </figure>
+              <figure class="project-page">
+                <button
+                  class="carousel-zoom-btn"
+                  type="button"
+                  data-zoom-src="img/ai-industry-1.png"
+                  data-zoom-caption="数据分析工作流 — shujufenxi"
+                  aria-label="放大查看：数据分析工作流"
+                >
+                  <img src="img/ai-industry-1.png" alt="数据分析工作流 — shujufenxi" loading="lazy" />
+                </button>
+                <figcaption>数据分析工作流</figcaption>
+              </figure>
+              <figure class="project-page">
+                <button class="carousel-zoom-btn" type="button" data-zoom-src="img/ai-industry-10.png" data-zoom-caption="惠山创新生态提升 — 科技创新与产业创新" aria-label="放大查看：惠山创新生态提升">
+                  <img src="img/ai-industry-10.png" alt="惠山创新生态提升 — 科技创新与产业创新" loading="lazy" />
+                </button>
+                <figcaption>创新生态提升</figcaption>
+              </figure>
+              <figure class="project-page">
+                <button class="carousel-zoom-btn" type="button" data-zoom-src="img/ai-industry-11.png" data-zoom-caption="惠山「5未来」布局 — 人工智能及机器人产业园" aria-label="放大查看：5未来产业布局">
+                  <img src="img/ai-industry-11.png" alt="惠山「5未来」布局 — 人工智能及机器人产业园" loading="lazy" />
+                </button>
+                <figcaption>5未来产业布局</figcaption>
+              </figure>
+              <figure class="project-page">
+                <button class="carousel-zoom-btn" type="button" data-zoom-src="img/ai-industry-12.png" data-zoom-caption="锡常维度公司企业核密度分析" aria-label="放大查看：企业核密度分析">
+                  <img src="img/ai-industry-12.png" alt="锡常维度公司企业核密度分析" loading="lazy" />
+                </button>
+                <figcaption>企业核密度分析</figcaption>
+              </figure>
+              <figure class="project-page">
+                <button class="carousel-zoom-btn" type="button" data-zoom-src="img/ai-industry-13.png" data-zoom-caption="惠山视角 — 5未来产业与南邮科创网络（AI 产业链）" aria-label="放大查看：惠山视角 AI 产业链">
+                  <img src="img/ai-industry-13.png" alt="惠山视角 — 5未来产业与南邮科创网络" loading="lazy" />
+                </button>
+                <figcaption>惠山视角 · AI 产业链</figcaption>
+              </figure>
+              <figure class="project-page">
+                <button class="carousel-zoom-btn" type="button" data-zoom-src="img/ai-industry-14.png" data-zoom-caption="南邮视角 — 学科强、人才优、影响广" aria-label="放大查看：南邮优势">
+                  <img src="img/ai-industry-14.png" alt="南邮视角 — 学科强、人才优、影响广" loading="lazy" />
+                </button>
+                <figcaption>南邮视角 · 学科与人才</figcaption>
+              </figure>
+              <figure class="project-page">
+                <button class="carousel-zoom-btn" type="button" data-zoom-src="img/ai-industry-15.png" data-zoom-caption="南邮内生需求 — 研发载体 · 领军人才 · 产业事件" aria-label="放大查看：南邮内生需求">
+                  <img src="img/ai-industry-15.png" alt="南邮内生需求 — 研发载体 · 领军人才 · 产业事件" loading="lazy" />
+                </button>
+                <figcaption>南邮内生需求</figcaption>
+              </figure>
+              <figure class="project-page">
+                <button class="carousel-zoom-btn" type="button" data-zoom-src="img/ai-industry-16.png" data-zoom-caption="惠山视角 — 3新4强产业载体" aria-label="放大查看：3新4强产业载体">
+                  <img src="img/ai-industry-16.png" alt="惠山视角 — 3新4强产业载体" loading="lazy" />
+                </button>
+                <figcaption>3新4强产业载体</figcaption>
+              </figure>
+              <figure class="project-page">
+                <button class="carousel-zoom-btn" type="button" data-zoom-src="img/ai-industry-17.png" data-zoom-caption="无锡视角 — 南邮 11 学院与 465 现代产业体系" aria-label="放大查看：南邮学院与产业体系">
+                  <img src="img/ai-industry-17.png" alt="无锡视角 — 南邮 11 学院与 465 现代产业体系" loading="lazy" />
+                </button>
+                <figcaption>南邮学院与产业体系</figcaption>
+              </figure>
+              <figure class="project-page">
+                <button class="carousel-zoom-btn" type="button" data-zoom-src="img/ai-industry-18.png" data-zoom-caption="惠山视角 — 3新4强布局情况" aria-label="放大查看：3新4强布局">
+                  <img src="img/ai-industry-18.png" alt="惠山视角 — 3新4强布局情况" loading="lazy" />
+                </button>
+                <figcaption>3新4强布局</figcaption>
+              </figure>
+              <figure class="project-page">
+                <button class="carousel-zoom-btn" type="button" data-zoom-src="img/ai-industry-19.png" data-zoom-caption="惠山视角 — 5未来布局（AI 及机器人产业园）" aria-label="放大查看：5未来布局">
+                  <img src="img/ai-industry-19.png" alt="惠山视角 — 5未来布局" loading="lazy" />
+                </button>
+                <figcaption>5未来布局</figcaption>
+              </figure>
+              <figure class="project-page">
+                <button class="carousel-zoom-btn" type="button" data-zoom-src="img/ai-industry-20.png" data-zoom-caption="惠山创新生态提升 — 环高校创新圈小结" aria-label="放大查看：创新生态小结">
+                  <img src="img/ai-industry-20.png" alt="惠山创新生态提升 — 环高校创新圈小结" loading="lazy" />
+                </button>
+                <figcaption>环高校创新圈小结</figcaption>
+              </figure>
+            </div>
+            <div class="project-pages-dots" role="tablist" aria-label="AI 产业分析 Agent 预览页切换"></div>
+          </div>
+          <div class="project-content">
+            <h3>AI 产业分析 Agent</h3>
+            <p>
+              产品团队核心成员（2026.01—2026.04）。针对产业研究门类复杂、耗时久、方向难把握等问题，在 Dify 上搭建 MVP：定义产业专家角色，建设内部产业知识库，设计「抓取 → 清洗 → 总结 → 分类 →
+              生成报告」工作流，内测迭代 3 轮，并通过提示词与数据源优化缓解幻觉与准确率问题。
+            </p>
+            <p>研究报告产出由约一周缩短至 1—2 天，效率约提升 3 倍，形成可复用工作流。</p>
+          </div>
+        </article>
+        <article class="project-card">
+          <div class="project-scroll" data-project-scroll>
+            <div
+              class="project-pages project-pages--full-img"
+              tabindex="0"
+              aria-label="泉州火车站城市更新：多页图纸预览，可横向滚动，自动轮播"
+            >
+              <figure class="project-page">
+                <img
+                  src="img/topic-industry-1.png"
+                  alt="泉州火车站城市更新：区域竞合格局与对外交通联系"
+                />
+                <figcaption>交通与区域格局</figcaption>
+              </figure>
+              <figure class="project-page">
+                <img
+                  src="img/topic-industry-2.png"
+                  alt="泉州火车站城市更新：经济特征与产业结构梳理"
+                />
+                <figcaption>产业结构梳理</figcaption>
+              </figure>
+              <figure class="project-page">
+                <img
+                  src="img/topic-industry-3.png"
+                  alt="泉州火车站城市更新：链群与空间布局及产业筛选"
+                />
+                <figcaption>链群与空间布局</figcaption>
+              </figure>
+            </div>
+            <div class="project-pages-dots" role="tablist" aria-label="泉州火车站城市更新图纸页切换"></div>
+          </div>
+          <div class="project-content">
+            <h3>泉州火车站城市更新</h3>
+            <p>
+              分析泉州产业集群与产业链，与周边地区竞合，提出「1+3+6」发展战略，以源头创新、AI赋能人工智能、低空经济等方向。
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="section container contact">
+      <h2>联系我</h2>
+      <ul>
+        <li>邮箱：1971260097@qq.com</li>
+        <li>电话：18751808028</li>
+        <li>
+          <a href="管曼玲-产品经理0603.pdf" download>下载简历（产品经理 · PDF）</a>
+        </li>
+        <li>
+          <a href="管曼玲-售前解决方案-0603.pdf" download>下载简历（售前解决方案 · PDF）</a>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> 管曼玲. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <div class="image-lightbox" id="imageLightbox" hidden aria-hidden="true">
+    <div class="image-lightbox__backdrop" data-lightbox-close></div>
+    <button class="image-lightbox__close" type="button" aria-label="关闭预览" data-lightbox-close>×</button>
+    <button class="image-lightbox__nav image-lightbox__nav--prev" type="button" aria-label="上一张">‹</button>
+    <button class="image-lightbox__nav image-lightbox__nav--next" type="button" aria-label="下一张">›</button>
+    <figure class="image-lightbox__figure">
+      <img class="image-lightbox__img" alt="" />
+      <figcaption class="image-lightbox__caption"></figcaption>
+    </figure>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
